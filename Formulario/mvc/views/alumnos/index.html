@@ -1,0 +1,176 @@
+<!-- NOMBRE: Maria del Carmen Hernandez Diaz
+ACCOUNT: 1718110389
+GROUP: TIC 51
+DATE: 12-07-2020
+DESCRIPTION: Uso de la arquitectura MVC. Formulario HTML5, haciendo uso de Bulma y Web.py, con metodo POST -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ETIQUETAS REQUERIDAS -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- OBTENCION DE ESTILOS - BULMA -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <title>Bienvenida</title>
+</head>
+
+<!-- HERO DEGRADADO - ENCABEZADO -->
+
+<section class="hero is-fullwidth is-danger is-family-monospace is-bold">
+    <nav class="hero-body">
+        <nav class="field is-grouped">
+            <!-- CLASE QUE PERMITE QUE LOS ELEMENTOS ESTEN JUNTOS EN FORMA DE FILA -->
+
+            <figure class="image is-128x128">
+                <img
+                    src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9c64cfe3-bb3b-4ae8-b5a6-d2f39d21ff87/d3jme6i-8c702ad4-4b7a-4763-9901-99f8b4f038b0.png/v1/fill/w_600,h_400,strp/fondo_transparente_png_by_imsnowbieber_d3jme6i-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD00MDAiLCJwYXRoIjoiXC9mXC85YzY0Y2ZlMy1iYjNiLTRhZTgtYjVhNi1kMmYzOWQyMWZmODdcL2Qzam1lNmktOGM3MDJhZDQtNGI3YS00NzYzLTk5MDEtOTlmOGI0ZjAzOGIwLnBuZyIsIndpZHRoIjoiPD02MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.2JrgW8AXhfVCeL3tOxOnIhsWLlL5MTuntOq0HfeK6CA">
+            </figure>
+            <figure class="image is-128x128">
+                <img
+                    src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9c64cfe3-bb3b-4ae8-b5a6-d2f39d21ff87/d3jme6i-8c702ad4-4b7a-4763-9901-99f8b4f038b0.png/v1/fill/w_600,h_400,strp/fondo_transparente_png_by_imsnowbieber_d3jme6i-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD00MDAiLCJwYXRoIjoiXC9mXC85YzY0Y2ZlMy1iYjNiLTRhZTgtYjVhNi1kMmYzOWQyMWZmODdcL2Qzam1lNmktOGM3MDJhZDQtNGI3YS00NzYzLTk5MDEtOTlmOGI0ZjAzOGIwLnBuZyIsIndpZHRoIjoiPD02MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.2JrgW8AXhfVCeL3tOxOnIhsWLlL5MTuntOq0HfeK6CA">
+            </figure>
+
+            <!-- TEXTO DE BIENVENIDA, SIZE 1 TIPO: PARRAFO -->
+
+            <p class="is-size-1 has-text-weight-bold is-family-monospace has-text-white has-text-centered">Bienvenido.
+            </p>
+
+            <!-- TEXTO DE EMPRESA, TIPO: H5 -->
+
+            <h5 class="title is-5">Kaplan@</h5>
+
+
+            <!-- LINKS IMAGENES USADAS -->
+
+            <figure class="image is-128x128">
+                <img
+                    src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9c64cfe3-bb3b-4ae8-b5a6-d2f39d21ff87/d3jme6i-8c702ad4-4b7a-4763-9901-99f8b4f038b0.png/v1/fill/w_600,h_400,strp/fondo_transparente_png_by_imsnowbieber_d3jme6i-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD00MDAiLCJwYXRoIjoiXC9mXC85YzY0Y2ZlMy1iYjNiLTRhZTgtYjVhNi1kMmYzOWQyMWZmODdcL2Qzam1lNmktOGM3MDJhZDQtNGI3YS00NzYzLTk5MDEtOTlmOGI0ZjAzOGIwLnBuZyIsIndpZHRoIjoiPD02MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.2JrgW8AXhfVCeL3tOxOnIhsWLlL5MTuntOq0HfeK6CA">
+            </figure>
+            <figure class="image is-128x128 is-3by1">
+                <img class="is-rounded"
+                    src="https://images.pexels.com/photos/4618513/pexels-photo-4618513.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+            </figure>
+            <figure class="image is-32x32">
+                <img
+                    src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9c64cfe3-bb3b-4ae8-b5a6-d2f39d21ff87/d3jme6i-8c702ad4-4b7a-4763-9901-99f8b4f038b0.png/v1/fill/w_600,h_400,strp/fondo_transparente_png_by_imsnowbieber_d3jme6i-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD00MDAiLCJwYXRoIjoiXC9mXC85YzY0Y2ZlMy1iYjNiLTRhZTgtYjVhNi1kMmYzOWQyMWZmODdcL2Qzam1lNmktOGM3MDJhZDQtNGI3YS00NzYzLTk5MDEtOTlmOGI0ZjAzOGIwLnBuZyIsIndpZHRoIjoiPD02MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.2JrgW8AXhfVCeL3tOxOnIhsWLlL5MTuntOq0HfeK6CA">
+            </figure>
+            <figure class="image is-128x128 is-3by1">
+                <img class="is-rounded"
+                    src="https://images.pexels.com/photos/1909830/pexels-photo-1909830.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+            </figure>
+            <figure class="image is-32x32">
+                <img
+                    src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9c64cfe3-bb3b-4ae8-b5a6-d2f39d21ff87/d3jme6i-8c702ad4-4b7a-4763-9901-99f8b4f038b0.png/v1/fill/w_600,h_400,strp/fondo_transparente_png_by_imsnowbieber_d3jme6i-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD00MDAiLCJwYXRoIjoiXC9mXC85YzY0Y2ZlMy1iYjNiLTRhZTgtYjVhNi1kMmYzOWQyMWZmODdcL2Qzam1lNmktOGM3MDJhZDQtNGI3YS00NzYzLTk5MDEtOTlmOGI0ZjAzOGIwLnBuZyIsIndpZHRoIjoiPD02MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.2JrgW8AXhfVCeL3tOxOnIhsWLlL5MTuntOq0HfeK6CA">
+            </figure>
+            <figure class="image is-128x128 is-3by1">
+                <img class="is-rounded"
+                    src="https://images.pexels.com/photos/2440296/pexels-photo-2440296.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+            </figure>
+        </nav>
+        <figure class="image is-32x32">
+            <img
+                src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9c64cfe3-bb3b-4ae8-b5a6-d2f39d21ff87/d3jme6i-8c702ad4-4b7a-4763-9901-99f8b4f038b0.png/v1/fill/w_600,h_400,strp/fondo_transparente_png_by_imsnowbieber_d3jme6i-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD00MDAiLCJwYXRoIjoiXC9mXC85YzY0Y2ZlMy1iYjNiLTRhZTgtYjVhNi1kMmYzOWQyMWZmODdcL2Qzam1lNmktOGM3MDJhZDQtNGI3YS00NzYzLTk5MDEtOTlmOGI0ZjAzOGIwLnBuZyIsIndpZHRoIjoiPD02MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.2JrgW8AXhfVCeL3tOxOnIhsWLlL5MTuntOq0HfeK6CA">
+        </figure>
+    </nav>
+
+    </strong>
+</section>
+
+<!-- SECCION FORMULARIO -->
+
+<section class="hero is-bold is-family-monospace is-small">
+    <nav class="hero-body">
+        <nav class="columns is-centered">
+            <nav class="column is-half">
+                <p>En esta plataforma podras realizar diversas acciones, tales como:</p>
+                <nav class="column is-half">
+                    <li> Insertar</li>
+                    <li> Ver alumno</li>
+                    <li> Borrar</li>
+                    <li> Modificar</li>
+                    <li> Ver lista de alumnos</li>
+                </nav>
+                <!-- INSTRUCCIONES -->
+                <h4 class="has-text-success	"><b>INSTRUCCIONES:</b>
+                    <h4 />
+                    <p>Solo añade la accion que deseas realizar a la url de este sitio, a continuacion se muestra un
+                        ejemplo.
+
+                    <nav class="column is-half">
+                        <li>http://localhost:8080/view</li>
+                        <li>http://localhost:8080/insertar</li>
+                        <li>http://localhost:8080/borrar</li>
+                        <li>http://localhost:8080/modificar</li>
+                        <li>http://localhost:8080/list</li>
+                        </p>
+                        <br>
+                        
+                        <p>O simplemente usa estos botones...</p>
+                        <nav class="column is-half">
+                            <nav class="column is-half">
+                                <nav class="column is-half">
+                    
+                                    <!-- BOTONES DEL MENU DE ACCIONES -->
+
+                                    <nav class="field is-grouped">
+                                        <p class="control">
+                                            <a href="http://localhost:8080/insertar"><button
+                                                    class="button is-primary is-rounded"
+                                                    type="button">Insertar</button></a>
+                                        </p>
+                                        <p class="control">
+                                            <a href="http://localhost:8080/borrar"><button
+                                                    class="button is-primary is-rounded"
+                                                    type="button">Borrar</button></a>
+                                        </p>
+                                        <p class="control">
+                                            <a href="http://localhost:8080/modificar"><button
+                                                    class="button is-primary is-rounded"
+                                                    type="button">Modificar</button></a>
+                                        </p>
+                                        <p class="control">
+                                            <a href="http://localhost:8080/list"><button
+                                                    class="button is-primary is-rounded" type="button">Lista
+                                                    alumnos</button></a>
+                                        </p>
+                                        <p class="control">
+                                            <a href="http://localhost:8080/view"><button
+                                                    class="button is-primary is-rounded" type="button">Ver
+                                                    alumno</button></a>
+                                        </p>
+                                    </nav>
+                                </nav>
+                            </nav>
+                        </nav>
+                    </nav>
+            </nav>
+        </nav>
+    </nav>
+
+
+
+</section>
+
+<!-- PIE DE PAGINA, COLOR: CORAL -->
+
+<footer class="footer" style="background-color: coral;">
+    <nav class="content is-fullwidth has-text-centered">
+        <!-- CONTENIDO CENTRADO -->
+
+        <p>
+            <strong class="has-text-weight">Kaplan</strong>
+            <br>
+
+            <!-- HIPERVINCULO HACIA LA PAGINA OFICIAL DE BULMA -->
+
+            <a class="has-text-weight-bold has-text-white" href="https://bulma.io/"> Creado con Bulma.</a>
+        </p>
+    </nav>
+</footer>
+
+</html>
